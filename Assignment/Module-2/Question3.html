@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question3</title>
+</head>
+<body>
+    <h2>How to used JavaScript Output method?</h2>
+    <p>
+        <h3>1.By manipulating the dom and used innerHTML property </h3>
+        <h3>2.By using document.write() method</h3>
+
+        <p id="demo"></p>
+        <button type="button" onclick="op()">click me 1</button>
+        <button type="button" onclick="op1()">click me 2</button>
+    </p>
+
+
+    <script>
+        function op(){
+            document.getElementById("demo").innerHTML="hello world";
+            
+        }
+        function op1(){
+            document.write("hello world");
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+.unorderlist1{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+
+  }
+  
+  .list a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+  }
+ 
+
+ 
+  
+  .list :hover {
+    
+  }
+  .img{
+    height: 60px;
+    width: 120px;
+  }
+  .container{
+  
+    min-width: 100%!important;
+    overflow-x: hidden;
+    background-color: #1d2c45;
+    z-index: 1000;
+   
+   
+  }
+  
+ 
+
+ 

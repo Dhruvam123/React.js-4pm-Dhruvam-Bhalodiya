@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4</title>
+</head>
+<body onload="color()">
+    <h2>How to use JavaScript Events</h2>
+    <p>
+        <h3>Mouse Events: click, mouseup, mousedown, etc.</h3>
+        <h3>Keyboard Events: keyup, keydown, keypress, etc.</h3>
+        <h3>Window Events: load, scroll, unload, etc.</h3>
+    </p>
+    <label for="textInput">Type something:</label>
+    <input type="text" id="textInput" onkeypress="enableButton()">
+    <button type="button" id="btn" onclick="clickFunction()" disabled>Click me</button>
+    <p id="demo"></p>
+
+    <script>
+        function enableButton() {
+            document.getElementById("btn").disabled = false;
+        }
+
+        function clickFunction() {
+            document.getElementById("demo").innerHTML = "Hello, world!";
+        }
+        function color(){
+            document.body.style.backgroundColor = '#3498db';
+        }
+    </script>
+</body>
+</html>
