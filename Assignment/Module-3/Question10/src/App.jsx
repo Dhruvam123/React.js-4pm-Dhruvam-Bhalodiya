@@ -10,16 +10,21 @@ function App() {
 
   return (
     <>
-    <div className='wrapper'>
-    <h2 className='top'>React way to render a list</h2>
-    <div className='divlist' >
-    <ul className='list'>
+    <div className="container">
+      <div className="centered-div">
+        <h1>REACT WAY TO RENDER A LIST</h1>
+        <ul className='list'>
       {strings.map((str) => (
+        <div className='inlinediv'>
+          <i className="bi bi-arrow-right-short"></i>
         <li key={str}>{str}</li>
+        </div>
       ))}
     </ul>
+      </div>
     </div>
-    </div>
+    
+    
     
       
     </>

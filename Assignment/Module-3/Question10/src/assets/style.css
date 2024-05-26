@@ -1,28 +1,38 @@
-.wrapper{
-    margin: auto;
-    width: 600px;
+.container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    height: 100vh; /* Full viewport height */
+  }
   
-    margin-top: 90px;
-   
-    background-color: greenyellow;
-    height: 300px;
-}
-.list{
-    list-style: none;
-    margin-right: 25px;
-   
-   
-
-}
-.list li{
-    background-color: white;
-    margin-bottom: 3px;
+  .centered-div {
+    width: 600px; /* Set your desired width */
+    height: 250px; /* Set your desired height */
+    background-color: greenyellow; /* Just for visual reference */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     
+   
+    
+  }
+  .centered-div h1{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+  }
+  li{
+    background-color: white;
+    margin-bottom: 7px;
+    list-style: none;
+    width: 300px;
 
-
-}
-.wrapper h2{
-    margin-top: 30px!important;
-}
+   
+    
+    
+  }
+  .inlinediv{
+    display: flex;
+    flex-direction: row;
+  }
+  
