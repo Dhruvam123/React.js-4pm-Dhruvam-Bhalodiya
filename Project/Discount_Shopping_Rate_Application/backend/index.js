@@ -7,6 +7,7 @@ const multer=require("multer")
 const path=require("path")
 const cors=require("cors");
 const { type } = require("os");
+const { log } = require("console");
 
 app.use(express.json());
 app.use(cors());
@@ -222,6 +223,53 @@ app.get('/newcollection',async(req,res)=>{
 
 
 
+
+const fetchUser=async(req,res,next)=>{
+    const token=req.header('auth-token')
+    if(!token){
+        res.status(401).send({errors:"please authenticate using valid token"})
+    }
+    else{
+        try{
+            const data=jwt.verify(token,'secret_ecom')
+            req.user=data.user;
+            next();
+        }
+        catch(error){
+            res.status(401).send({errors:"please authenticate using a valid token"})
+
+        }
+    }
+
+}
+app.post('/addtocart',fetchUser,async(req,res)=>{
+    console.log("added",req.body.itemId)
+    let userData=await Users.findOne({_id:req.user.id})
+    userData.cartData[req.body.itemId]+=1;
+    await Users.findByIdAndUpdate({_id:req.user.id},{cartData:userData.cartData})
+    res.send("added")
+
+})
+//creating endpoint for remove product from cart
+app.post('/removefromcart',fetchUser,async(req,res)=>{
+    console.log("removed",req.body.itemId)
+    let userData=await Users.findOne({_id:req.user.id})
+    if(userData.cartData[req.body.itemId]>0)
+    userData.cartData[req.body.itemId]-=1;
+    await Users.findByIdAndUpdate({_id:req.user.id},{cartData:userData.cartData})
+    res.send("removed")
+
+
+
+})
+//creating endpoint to get cartdata\
+app.post('/getcart',fetchUser,async(req,res)=>{
+    console.log("getcart")
+    let userData=await Users.findOne({_id:req.user.id})
+    res.json(userData.cartData);
+    
+
+})
 
 
 
