@@ -26,7 +26,8 @@ const AddTaskHendeler=(e)=>{
     }
 
     // call api to add data using axios.post()
-     axios.post(`http://localhost:8000/added-task`,insert).then(()=>{
+     axios.post(`http://localhost:8000/added-task`,insert).then(()=>
+        {
         //   setData(response.data);
         console.log(data);
         // pass a message
@@ -36,7 +37,7 @@ const AddTaskHendeler=(e)=>{
             icon: "success"
           });
 
-     },[]);
+     });
 
      e.target.reset();
 }
